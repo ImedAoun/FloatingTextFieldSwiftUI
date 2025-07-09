@@ -16,8 +16,8 @@ struct ContentView: View {
 
             Spacer()
 
-            FloatingLabelContainer(text: username) {
-                Text("PlaceHolder User Name")
+            FloatingTextField(text: username) {
+                Text("placeholder username")
                     .foregroundColor(.black)
                     .padding(8)
             } field: {
@@ -27,8 +27,8 @@ struct ContentView: View {
             }
             .background(.white)
 
-            FloatingLabelContainer(text: password) {
-                Text("PlaceHolder Password")
+            FloatingTextField(text: password) {
+                Text("placeholder password")
                     .foregroundColor(.black)
                     .padding(8)
             } field: {

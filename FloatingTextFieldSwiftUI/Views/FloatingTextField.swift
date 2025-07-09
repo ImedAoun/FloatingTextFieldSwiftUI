@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FloatingLabelContainer<Label: View, Field: View>: View {
+struct FloatingTextField<Label: View, Field: View>: View {
     // MARK: Lifecycle
 
     init(text: String,
@@ -71,7 +71,7 @@ struct FloatingLabelContainer<Label: View, Field: View>: View {
 #Preview("", traits: .sizeThatFitsLayout) {
     @Previewable @State var text = ""
     let textField = TextField("", text: $text)
-    FloatingLabelContainer(text: text) {
+    FloatingTextField(text: text) {
         Text("Place Holder")
     } field: {
         textField

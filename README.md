@@ -1,5 +1,7 @@
 # FloatingTextFieldSwiftUI
 
+![Demo of FloatingTextFieldSwiftUI](FloatingTextFieldSwiftUI/Assets/demo.gif)
+
 🚀 A clean and customizable SwiftUI floating text field component — ideal for modern iOS forms.
 
 ![FloatingTextFieldSwiftUI Demo](demo.gif) <!-- Replace or remove if no demo yet -->
@@ -32,10 +34,28 @@ struct LoginView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            FloatingTextField(title: "Email", text: $email, isSecure: false)
-            FloatingTextField(title: "Password", text: $password, isSecure: true)
+             FloatingTextField(text: email) {
+                Text("placeholder email")
+                    .foregroundColor(.black)
+                    .padding(8)
+            } field: {
+                TextField("", text: $email)
+                    .foregroundColor(.black)
+                    .padding(8)
+            }
+            .background(.white)
+
+            FloatingTextField(text: password) {
+                Text("placeholder password")
+                    .foregroundColor(.black)
+                    .padding(8)
+            } field: {
+                SecureField("", text: $password)
+                    .foregroundColor(.black)
+                    .padding(8)
+            }
+            .background(.white)
         }
         .padding()
     }
 }
-
